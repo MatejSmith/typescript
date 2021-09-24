@@ -1,6 +1,15 @@
 export{};
-let output = (goUp: number, goNext: number, tower: number) => {
-    return ((tower / goUp) * goNext) + tower;
+let Equal = (a: number, b: number, c: number) =>{
+    let numberOfEquals: number = 0;
+    if(a == b && b == c){
+        numberOfEquals = 3;
+    }
+    else if(a == b || a == c || b == c){
+        numberOfEquals = 2;
+    }
+    return numberOfEquals;
 }
 
-console.log(output(0.2, 0.4, 100.0));
+console.log(Equal(2,3,4));
+console.log(Equal(2,3,2));
+console.log(Equal(2,2,2));
