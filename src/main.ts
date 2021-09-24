@@ -1,3 +1,4 @@
+export{};
 let output = (goUp: number, goNext: number, tower: number) => {
     return ((tower / goUp) * goNext) + tower;
 }

@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 var output = function (goUp, goNext, tower) {
     return ((tower / goUp) * goNext) + tower;
 };
