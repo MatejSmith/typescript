@@ -1,13 +1,18 @@
 "use strict";
 exports.__esModule = true;
-var multiplyByLength = function (array) {
-    var x = 0;
-    for (var a = 0; a < array.length; a++) {
-        x = a + 1;
+var checkPalindrome = function (word) {
+    var check;
+    var reverse = "";
+    var word_lenght = word.length;
+    for (var i = word_lenght - 1; i >= 0; i--) {
+        reverse = reverse + word.charAt(i);
     }
-    for (var i = 0; i < array.length; i++) {
-        array[i] = array[i] * x;
-    }
-    return array;
+    check = word === reverse;
+    return check;
 };
-console.log(multiplyByLength(new Array(1, 4, 6, 3, 7, 5)));
+if (checkPalindrome("oko")) {
+    console.log("True");
+}
+else {
+    console.log("False");
+}

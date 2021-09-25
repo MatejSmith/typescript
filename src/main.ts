@@ -1,13 +1,19 @@
 export{};
-let multiplyByLength = (array: Array<number>) => {
-    let x: number = 0;
-    for (let a: number = 0; a < array.length; a++){
-        x = a + 1;
+let checkPalindrome = (word: string) =>{
+    let check: boolean;
+    let reverse: string = "";
+    let word_lenght: number = word.length;
+    for (let i: number = word_lenght - 1; i >= 0; i--){
+        reverse = reverse + word.charAt(i);
     }
-    for (let i: number = 0; i < array.length; i++){
-        array[i] = array[i] * x;
-    }
-    return array;
+
+    check = word === reverse;
+    return check;
 }
 
-console.log(multiplyByLength(new Array(1, 4, 6, 3, 7, 5)));
+if (checkPalindrome("oko")){
+    console.log("True");
+}
+else{
+    console.log("False");
+}
