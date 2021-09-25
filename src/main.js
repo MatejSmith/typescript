@@ -1,18 +1,16 @@
 "use strict";
 exports.__esModule = true;
-var checkPalindrome = function (word) {
-    var check;
-    var reverse = "";
-    var word_lenght = word.length;
-    for (var i = word_lenght - 1; i >= 0; i--) {
-        reverse = reverse + word.charAt(i);
+var RPS = function (player_1, player_2) {
+    if ((player_1 === ("Rock") && player_2 === ("Scissors")) || (player_1 === ("Paper") && player_2 === ("Rock")) || (player_1 === ("Scissors") && player_2 === ("Paper"))) {
+        console.log("Player 1 win");
     }
-    check = word === reverse;
-    return check;
+    else if ((player_2 === ("Rock") && player_1 === ("Scissors")) || (player_2 === ("Paper") && player_1 === ("Rock")) || (player_2 === ("Scissors") && player_1 === ("Paper"))) {
+        console.log("Player 2 win");
+    }
+    else {
+        console.log("Tie");
+    }
 };
-if (checkPalindrome("oko")) {
-    console.log("True");
-}
-else {
-    console.log("False");
-}
+RPS("Paper", "Rock");
+RPS("Paper", "Scissors");
+RPS("Scissors", "Scissors");
