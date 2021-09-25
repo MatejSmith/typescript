@@ -1,10 +1,11 @@
 export{};
-let Triangle = (a: number, b: number, c: number) => {
-    return a + b > c && a + c > b && b + c > a;
+let Pie = (total: number, recipients: number, each: number) => {
+    return each * recipients <= total;
 }
 
-if (!Triangle(4, 5, 8)) {
-            console.log("False")
-        } else {
-            console.log("True");
+if(!Pie(8, 3, 3)){
+    console.log("False");
+}
+else{
+    console.log("True");
 }

@@ -1,9 +1,9 @@
 "use strict";
 exports.__esModule = true;
-var Triangle = function (a, b, c) {
-    return a + b > c && a + c > b && b + c > a;
+var Pie = function (total, recipients, each) {
+    return each * recipients <= total;
 };
-if (!Triangle(4, 5, 8)) {
+if (!Pie(8, 3, 3)) {
     console.log("False");
 }
 else {
