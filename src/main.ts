@@ -1,15 +1,10 @@
 export{};
-let Equal = (a: number, b: number, c: number) =>{
-    let numberOfEquals: number = 0;
-    if(a == b && b == c){
-        numberOfEquals = 3;
-    }
-    else if(a == b || a == c || b == c){
-        numberOfEquals = 2;
-    }
-    return numberOfEquals;
+let Triangle = (a: number, b: number, c: number) => {
+    return a + b > c && a + c > b && b + c > a;
 }
 
-console.log(Equal(2,3,4));
-console.log(Equal(2,3,2));
-console.log(Equal(2,2,2));
+if (!Triangle(4, 5, 8)) {
+            console.log("False")
+        } else {
+            console.log("True");
+}
