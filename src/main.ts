@@ -1,5 +1,4 @@
 export{};
-
 let multiplyByLength = (array: Array<number>) => {
     let x: number = 0;
     for (let a: number = 0; a < array.length; a++){
