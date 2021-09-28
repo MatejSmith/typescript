@@ -1,16 +1,18 @@
 "use strict";
 exports.__esModule = true;
-var RPS = function (player_1, player_2) {
-    if ((player_1 === ("Rock") && player_2 === ("Scissors")) || (player_1 === ("Paper") && player_2 === ("Rock")) || (player_1 === ("Scissors") && player_2 === ("Paper"))) {
-        console.log("Player 1 win");
+var differenceMaxMin = function (array) {
+    var min = array[0];
+    var max = array[0];
+    for (var _i = 0, array_1 = array; _i < array_1.length; _i++) {
+        var i = array_1[_i];
+        if (i < min)
+            min = i;
     }
-    else if ((player_2 === ("Rock") && player_1 === ("Scissors")) || (player_2 === ("Paper") && player_1 === ("Rock")) || (player_2 === ("Scissors") && player_1 === ("Paper"))) {
-        console.log("Player 2 win");
+    for (var _a = 0, array_2 = array; _a < array_2.length; _a++) {
+        var x = array_2[_a];
+        if (x > max)
+            max = x;
     }
-    else {
-        console.log("Tie");
-    }
+    return (max) - (min);
 };
-RPS("Paper", "Rock");
-RPS("Paper", "Scissors");
-RPS("Scissors", "Scissors");
+console.log(differenceMaxMin(new Array(44, 32, 86, 19)));

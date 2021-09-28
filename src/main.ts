@@ -1,14 +1,19 @@
 export{};
-let RPS = (player_1: string, player_2: string) => {
-    if ((player_1 === ("Rock") && player_2 === ("Scissors")) || (player_1 === ("Paper") && player_2 === ("Rock")) || (player_1 === ("Scissors") && player_2 === ("Paper"))) {
-            console.log("Player 1 win");
-        } else if ((player_2 === ("Rock") && player_1 === ("Scissors")) || (player_2 === ("Paper") && player_1 === ("Rock")) || (player_2 === ("Scissors") && player_1 === ("Paper"))) {
-            console.log("Player 2 win");
-        } else {
-            console.log("Tie");
-        }
+let differenceMaxMin = (array: Array<number>) => {
+    let min = array[0];
+    let max = array[0];
+
+    for (let i of array){
+        if (i < min)
+            min = i;
+    }
+
+    for (let x of array){
+        if (x > max)
+            max = x;
+    }
+
+    return (max) - (min);
 }
 
-RPS("Paper", "Rock");
-RPS("Paper", "Scissors");
-RPS("Scissors", "Scissors");
+console.log(differenceMaxMin(new Array(44, 32, 86, 19)));
