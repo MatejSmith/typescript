@@ -1,19 +1,25 @@
 export{};
-let differenceMaxMin = (array: Array<number>) => {
-    let min = array[0];
-    let max = array[0];
-
-    for (let i of array){
-        if (i < min)
-            min = i;
+let War = (array: Array<number>) => {
+    let odd: number = 0;
+    let even: number = 0;
+    for (let i of array) {
+        if (i % 2 == 0){
+            odd = odd + i;
+        }
     }
 
-    for (let x of array){
-        if (x > max)
-            max = x;
+    for (let i of array) {
+        if (i % 2 != 0){
+            even = even + i;
+        }
     }
 
-    return (max) - (min);
+    if (even > odd){
+        return (even) - (odd);
+    }
+    else{
+        return (odd) - (even);
+    }
 }
 
-console.log(differenceMaxMin(new Array(44, 32, 86, 19)));
+console.log(War(new Array(9, 45, 6, 2, 7, 34, 8, 6, 90, 5, 243)));

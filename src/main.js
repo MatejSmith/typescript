@@ -1,18 +1,25 @@
 "use strict";
 exports.__esModule = true;
-var differenceMaxMin = function (array) {
-    var min = array[0];
-    var max = array[0];
+var War = function (array) {
+    var odd = 0;
+    var even = 0;
     for (var _i = 0, array_1 = array; _i < array_1.length; _i++) {
         var i = array_1[_i];
-        if (i < min)
-            min = i;
+        if (i % 2 == 0) {
+            odd = odd + i;
+        }
     }
     for (var _a = 0, array_2 = array; _a < array_2.length; _a++) {
-        var x = array_2[_a];
-        if (x > max)
-            max = x;
+        var i = array_2[_a];
+        if (i % 2 != 0) {
+            even = even + i;
+        }
     }
-    return (max) - (min);
+    if (even > odd) {
+        return (even) - (odd);
+    }
+    else {
+        return (odd) - (even);
+    }
 };
-console.log(differenceMaxMin(new Array(44, 32, 86, 19)));
+console.log(War(new Array(9, 45, 6, 2, 7, 34, 8, 6, 90, 5, 243)));
