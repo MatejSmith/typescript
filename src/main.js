@@ -1,25 +1,23 @@
-"use strict";
-exports.__esModule = true;
-var War = function (array) {
-    var odd = 0;
-    var even = 0;
-    for (var _i = 0, array_1 = array; _i < array_1.length; _i++) {
-        var i = array_1[_i];
-        if (i % 2 == 0) {
-            odd = odd + i;
-        }
+var canCapture = function (array) {
+    var First = "";
+    var Second = "";
+    var Third = "";
+    var Fourth = "";
+    for (var i = 1; i < array[0].length; i++) {
+        First = First + array[0].charAt(i);
     }
-    for (var _a = 0, array_2 = array; _a < array_2.length; _a++) {
-        var i = array_2[_a];
-        if (i % 2 != 0) {
-            even = even + i;
-        }
+    for (var i = 1; i < array[1].length; i++) {
+        Second = Second + array[1].charAt(i);
     }
-    if (even > odd) {
-        return (even) - (odd);
+    for (var i = 0; i < array[0].length - 1; i++) {
+        Third = Third + array[0].charAt(i);
     }
-    else {
-        return (odd) - (even);
+    for (var i = 0; i < array[1].length - 1; i++) {
+        Fourth = Fourth + array[1].charAt(i);
     }
+    return First === Second || Third === Fourth;
 };
-console.log(War(new Array(9, 45, 6, 2, 7, 34, 8, 6, 90, 5, 243)));
+console.log(canCapture(new Array("A8", "E8")));
+console.log(canCapture(new Array("A1", "B2")));
+console.log(canCapture(new Array("H4", "H3")));
+console.log(canCapture(new Array("F5", "C8")));

@@ -1,25 +1,28 @@
-export{};
-let War = (array: Array<number>) => {
-    let odd: number = 0;
-    let even: number = 0;
-    for (let i of array) {
-        if (i % 2 == 0){
-            odd = odd + i;
-        }
+let canCapture = (array: Array<String>) => {
+    let First: String = "";
+    let Second: String = "";
+    let Third: String = "";
+    let Fourth: String = "";
+    for (let i = 1; i < array[0].length; i++) {
+        First = First + array[0].charAt(i);
     }
 
-    for (let i of array) {
-        if (i % 2 != 0){
-            even = even + i;
-        }
+    for (let i = 1; i < array[1].length; i++) {
+        Second = Second + array[1].charAt(i);
     }
 
-    if (even > odd){
-        return (even) - (odd);
+    for (let i = 0; i < array[0].length - 1; i++) {
+        Third = Third + array[0].charAt(i);
     }
-    else{
-        return (odd) - (even);
+
+    for (let i = 0; i < array[1].length - 1; i++) {
+        Fourth = Fourth + array[1].charAt(i);
     }
+
+    return First === Second || Third === Fourth;
 }
 
-console.log(War(new Array(9, 45, 6, 2, 7, 34, 8, 6, 90, 5, 243)));
+console.log(canCapture(new Array("A8", "E8")));
+console.log(canCapture(new Array("A1", "B2")));
+console.log(canCapture(new Array("H4", "H3")));
+console.log(canCapture(new Array("F5", "C8")));
